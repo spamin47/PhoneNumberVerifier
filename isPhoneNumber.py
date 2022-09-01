@@ -3,8 +3,7 @@ import re
 import sys
 
 def isPhoneNumber(string):
-    # if len(string) != 12:
-    #     return False
+    
     x=re.search("\d{3}-\d{3}-\d{4}",string)
     matches = re.findall("\d{3}-\d{3}-\d{4}",string)
     length = len(matches)
