@@ -17,12 +17,11 @@ def isPhoneNumber(string):
     
 try:
     with open(str(sys.argv[1]),'r') as f:
-        file = f
-        text = str(file.readlines())[2:-2]
+        text = str(f.readlines())[2:-2]
 except:
     print("Can't open provided path in command argument. Openng test.txt file...")
-    file = open("test.txt",'r')
-    text = str(file.readlines())[2:-2]
+    with open("test.txt",'r') as f:
+        text = str(f.readlines())[2:-2]
 
 
 print(isPhoneNumber(text))
