@@ -4,20 +4,19 @@ import sys
 
 def isPhoneNumber(string):
     
-    x=re.search("\d{3}-\d{3}-\d{4}",string)
-    matches = re.findall("\d{3}-\d{3}-\d{4}",string)
+    matches = re.findall("\d{3}-\d{3}-\d{4}",string) #Regex method for finding all ###-####-####
     length = len(matches)
-    if length == 0:
-        print("0 match")
-        return False
-    else:
-        print(str(len(matches)) + " match(es): " + str(matches)) 
-        return True
-print(sys.argv)
-print("length: " + str(len(sys.argv)))
-
+    # if length == 0:
+    #     print("0 match")
+    #     return False
+    # else:
+    #     print(str(len(matches)) + " match(es): " + str(matches)) 
+    #     return True
+    print(str(len(matches)) + " match(es): " + str(matches)) 
+    return length !=0
+    
 try:
-    with open(str(sys.argv[1]),'w') as f:
+    with open(str(sys.argv[1]),'r') as f:
         file = f
         text = str(file.readlines())[2:-2]
 except:
@@ -25,6 +24,5 @@ except:
     file = open("test.txt",'r')
     text = str(file.readlines())[2:-2]
 
-print(text)
 
 print(isPhoneNumber(text))
